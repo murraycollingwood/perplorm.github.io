@@ -5,15 +5,15 @@ title: Installing Perpl
 
 # System Requirements #
 
-Perpl requires PHP to run.  PHP required plugins include PDO and DOM.  Perpl supports PHP versions from 8.1 through to 8.4.
+Perpl requires PHP to be installed.  Compatible PHP versions include 8.1 through 8.4.  Required PHP plugins include PDO and DOM.
 
-Perpl requires an SQL database such as; MySQL; MariaDB; MS SQL Server; PostgreSQL; SQLite; Oracle.
+Perpl requires an SQL database such as; MySQL; MariaDB; MS SQL Server; PostgreSQL; SQLite; or Oracle.
 
 Perpl is multi-platform and we strive to make it run equally well on Windows, Linux and macOS.
 
 # Installing Perpl #
 
-We recommend installing Perpl using [Composer](http://getcomposer.org/).
+We recommend installing Perpl using [Composer](http://getcomposer.org/).  To install the currently stable version of Perpl simply run the command:
 
 `composer install perplorm/perpl`
 
@@ -49,8 +49,8 @@ The root directory of the Perpl library includes the following folders:
 
 The Perpl generator component bundles a `perpl` sh script (and a `perpl.bat` script for Windows). This script makes it easy to execute build commands. You can test this component is properly installed by calling the `perpl` script from the CLI (example for Linux or macOS):
 
-```$ cd myproject
-$ vendor/bin/perpl
+```cd myproject
+vendor/bin/perpl
 ```
 
 The command should output the Perpl version following by a list of the options and the available commands. We will learn to use these commands later.
@@ -60,8 +60,8 @@ The command should output the Perpl version following by a list of the options a
 > Perpl generator's `bin/` directory to your PATH, or create a symlink. For
 > example:
 >
-> ```$ cd myproject
-> $ ln -s vendor/bin/perpl perpl
+> ```cd myproject
+> ln -s vendor/bin/perpl perpl
 > ```
 >
 > Or simply edit your .bashrc or .zshrc file:
