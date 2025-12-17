@@ -15,7 +15,9 @@ Perpl is multi-platform and we strive to make it run equally well on Windows, Li
 
 We recommend installing Perpl using [Composer](http://getcomposer.org/).  To install the currently stable version of Perpl simply run the command:
 
-`composer install perplorm/perpl`
+```bash
+composer install perplorm/perpl
+```
 
 Alternatively you can add Perpl to your composer.json and then use the 'composer update' command to install Perpl and any dependencies.
 
@@ -49,7 +51,8 @@ The root directory of the Perpl library includes the following folders:
 
 The Perpl generator component bundles a `perpl` sh script (and a `perpl.bat` script for Windows). This script makes it easy to execute build commands. You can test this component is properly installed by calling the `perpl` script from the CLI (example for Linux or macOS):
 
-```cd myproject
+```bash
+cd myproject
 vendor/bin/perpl
 ```
 
@@ -60,17 +63,22 @@ The command should output the Perpl version following by a list of the options a
 > Perpl generator's `bin/` directory to your PATH, or create a symlink. For
 > example:
 >
-> ```cd myproject
+> ```bash
+> cd myproject
 > ln -s vendor/bin/perpl perpl
 > ```
 >
 > Or simply edit your .bashrc or .zshrc file:
 >
-> `export PATH=$PATH:/path/to/vendor/bin/`
+> ```bash
+> export PATH=$PATH:/path/to/vendor/bin/
+> ```
 >
 > On Windows you could set the PATH for the opened command with:
 >
-> `set PATH=%PATH%;C:/path/to/vendor/bin/`
+> ```bash
+> set PATH=%PATH%;C:/path/to/vendor/bin/
+> ```
 >
 > To globally define the PATH adjust it inside the "Environment Variables", which
 > you can find in your system advanced settings panel.
