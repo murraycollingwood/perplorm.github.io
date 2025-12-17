@@ -55,7 +55,7 @@ $ vendor/bin/perpl
 
 The command should output the Perpl version following by a list of the options and the available commands. We will learn to use these commands later.
 
-> [Tip]
+> [!TIP]
 > In order to allow an easier execution of the script, you can also add the
 > Perpl generator's `bin/` directory to your PATH, or create a symlink. For
 > example:
