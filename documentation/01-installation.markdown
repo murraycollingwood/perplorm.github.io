@@ -83,7 +83,23 @@ The command should output the Perpl version following by a list of the options a
 > To globally define the PATH adjust it inside the "Environment Variables", which
 > you can find in your system advanced settings panel.
 
+
+
+# Including Perpl in your PHP code #
+You can now include Perpl in your PHP code, as with other composer libraries:
+
+```php
+<?php
+
+// setup the autoloading
+require_once '/path/to/vendor/autoload.php';
+
+// setup Perpl
+require_once '/generated-conf/config.php';
+```
+
 At this point, Perpl should be setup and ready to use. You can follow the steps in the [Build Guide](02-buildtime.html) to try it out.
+
 
 ## Troubleshooting ##
 
