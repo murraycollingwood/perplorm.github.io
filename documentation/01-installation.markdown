@@ -1,39 +1,34 @@
 ---
-meta-language: en
-meta-og:description: Installing ❊ Perpl ❊
-meta-og:image: https://perplorm.github.io/images/perpl-icon.png
-meta-og:title: ❊ Perpl ❊, The Blazing Fast Open-Source PHP ORM
-meta-viewport: width=device-width
-title: Installing ❊ Perpl ❊ -&nbsp;❊ Perpl ❊, The Blazing Fast Open-Source PHP8 ORM
+layout: documentation
+title: Installing Propel
 ---
 
-# Installing ❊ Perpl ❊
+# Installing Propel #
 
-❊ Perpl ❊ is available via [composer](#via-composer) (see also <https://packagist.org/packages/perplorm/perpl>), as a clone from the official [Github repository](https://github.com/perplorm/perpl) and as a "traditional" [tgz](https://github.com/perplorm/perpl/tarball/main) or [zip](https://github.com/perplorm/perpl/zipball/main) package. Whatever installation method you may choose, getting ❊ Perpl ❊ to work is pretty straightforward.
+Propel is available as a clone from the official [Github repository](http://github.com/propelorm/Propel2), as a checkout from Subversion through Github and as a "traditional" [tgz](https://github.com/propelorm/Propel2/archives/master).
 
-## Prerequisites
+## Prerequisites ##
 
-❊ Perpl ❊ just requires:
+Propel just requires:
 
-- [PHP 8.1](https://www.php.net/) or newer, with the DOM (libxml2) module enabled
-- A supported database (MySQL, MS SQL Server, PostgreSQL, SQLite, Oracle)
+* [PHP 8.1](http://www.php.net/) or newer, with the DOM (libxml2) module enabled
+* A supported database (MySQL, MS SQL Server, PostgreSQL, SQLite, Oracle)
 
+Propel also uses some Symfony2 components to work properly:
 
-❊ Perpl ❊ also uses some Symfony components to work properly:
+* [Config](https://github.com/symfony/Config) : uses in the source code to manage and validate configuration.
+* [Console](https://github.com/symfony/Console) : which manage the generators propel uses.
+* [Yaml](https://github.com/symfony/Yaml)
+* [Validator](https://github.com/symfony/Validator) : a way you manage validations with Propel.
+* [Finder](https://github.com/symfony/Finder) : uses in the source code to manage the files.
 
-- [Config](https://github.com/symfony/Config) : used in the source code to manage and validate configuration.
-- [Console](https://github.com/symfony/Console) : manages the generators ❊ Perpl ❊ uses.
-- [Yaml](https://github.com/symfony/Yaml)
-- [Validator](https://github.com/symfony/Validator) : manages validations with ❊ Perpl ❊.
-- [Finder](https://github.com/symfony/Finder) : used in the source code to manage files.
+>**Tip**Propel uses the PDO and SPL components, which are bundled and enabled by default in PHP8.
 
-> **Tip** ❊ Perpl ❊ uses the PDO and SPL components, which are bundled and enabled by default in PHP8.
+## Setup ##
 
-## Setup
+### Via Composer ###
 
-### Via Composer
-
-We advise you to rely on [Composer](https://getcomposer.org/) to manage your projects' dependencies. If you want to install ❊ Perpl ❊ via Composer, just create a new `composer.json` file at the root of your project's directory with the following content:
+We advise you to rely on [Composer](http://getcomposer.org/) to manage your projects' dependencies. If you want to install Propel via Composer, just create a new `composer.json` file at the root of your project.
 
 ```json
 {
@@ -46,9 +41,9 @@ We advise you to rely on [Composer](https://getcomposer.org/) to manage your pro
 Then you have to download Composer itself so in a terminal just type the following:
 
 ```bash
-$ wget https://getcomposer.org/composer.phar
+$ wget http://getcomposer.org/composer.phar
 # If you haven't wget on your computer
-$ curl -s https://getcomposer.org/installer | php
+$ curl -s http://getcomposer.org/installer | php
 ```
 
 Finally, to install all your project's dependencies, type the following:
@@ -57,53 +52,54 @@ Finally, to install all your project's dependencies, type the following:
 $ php composer.phar install
 ```
 
-### Via Git
+### Via Git ###
 
-If you want, you can also setup ❊ Perpl ❊ using Git cloning the Github repository:
+If you want, you can also setup Propel using Git cloning the Github repository:
 
 ```bash
-$ git clone git://github.com/perplorm/perpl vendor/perplorm/perpl
+$ git clone git://github.com/propelorm/Propel2 vendor/propel
 ```
 
-❊ Perpl ❊ is well unit-tested so the cloned version should be pretty stable. If you want to update ❊ Perpl ❊, just go to the repository and pull the remote:
+Propel is well unit-tested so the cloned version should be pretty stable. If you want to update Propel, just go to the repository and pull the remote:
 
 ```bash
-$ cd myproject/vendor/perplorm/perpl
+$ cd myproject/vendor/propel
 $ git pull
 ```
 
-## ❊ Perpl ❊ Directory Structure
+## Propel Directory Structure ##
 
-The root directory of the ❊ Perpl ❊ library includes the following folders:
+The root directory of the Propel library includes the following folders:
 
-| Folders   | Explanations                                                                                      |
-| --------- | ------------------------------------------------------------------------------------------------- |
-| bin       | Contains scripts that manage the ❊ Perpl ❊ command line tool (depending of your operating system) |
-| resources | Contains some files such as the database XSD or DTD                                               |
-| src       | The ❊ Perpl ❊ source code. Pass over if you just want to use ❊ Perpl ❊, not to contribute.       |
-| templates | Well, templates. ❊ Perpl ❊ makes use of templating.                                               |
-| tests     | ❊ Perpl ❊ unit tests. Ignore this if you don't want to contribute to ❊ Perpl ❊.                   |
+|Folders        |Explanations
+|---|---------|
+|bin            |Contains three scripts that manage propel command line tool (depending of your operating system)
+|features       |Tests written with the Behat framework
+|resources      |Contains some files such as the database XSD or DTD
+|src            |The Propel source code. Pass over if you just want to use Propel, not to contribute.
+|tests          |Propel unit tests. Ignore this if you don't want to contribute to Propel.
 
-## Testing ❊ Perpl ❊ Installation
+## Testing Propel Installation ##
 
-The ❊ Perpl ❊ generator component bundles a `perpl` sh script (and a `perpl.bat` script for Windows). This script makes it easy to execute build commands. You can test this component is properly installed by calling the `perpl` script from the CLI:
+The Propel generator component bundles a `propel` sh script (and a `propel.bat` script for Windows). This script makes it easy to execute build commands. You can test this component is properly installed by typing the following command:
 
 ```bash
 $ cd myproject
-$ vendor/bin/perpl
+$ vendor/bin/propel
 ```
 
-The command should output the ❊ Perpl ❊ version followed by a list of the options and the available commands. We will learn to use these commands later.
+The command should output the Propel version following by a list of the options and the available commands. We will learn to use these commands later.
 
-> **Tip** In order to allow an easier execution of the script, you can also add the
-> perpl generator's `bin/` directory to your PATH, or create a symlink. For example:
+> **Tip**In order to allow an easier execution of the script, you can also add the
+> propel generator's `bin/` directory to your PATH, or create a symlink. For
+> example:
 >
 > ```bash
 > $ cd myproject
-> $ ln -s vendor/bin/perpl perpl
+> $ ln -s vendor/bin/propel propel
 > ```
 >
-> Or simply edit your `.bashrc` or `.zshrc` file:
+> Or simply edit your .bashrc or .zshrc file:
 >
 > ```bash
 > export PATH=$PATH:/path/to/vendor/bin/
@@ -111,26 +107,21 @@ The command should output the ❊ Perpl ❊ version followed by a list of the op
 >
 > On Windows you could set the PATH for the opened command with:
 >
-> ```bash
+> ```
 > set PATH=%PATH%;C:/path/to/vendor/bin/
 > ```
 >
 > To globally define the PATH adjust it inside the "Environment Variables", which
 > you can find in your system advanced settings panel.
 
-At this point, ❊ Perpl ❊ should be setup and ready to use. You can follow the steps in the [Build Guide](https://perplorm.github.io/documentation/02-buildtime.html) to try it out.
+At this point, Propel should be setup and ready to use. You can follow the steps in the [Build Guide](02-buildtime.html) to try it out.
 
-## Troubleshooting
+## Troubleshooting ##
 
-### Getting Help
+### Getting Help ###
 
-If you can't manage to install ❊ Perpl ❊, don't hesitate to ask for help. See [Support](https://perplorm.github.io/support.html) for details on getting help.
-
----
-
-[Next: Building a project →](https://perplorm.github.io/documentation/02-buildtime.html)
-
-
+If you can't manage to install Propel, don't hesitate to ask for help. See
+[Support](../support.html) for details on getting help.
 
 ---
 <span class="next">[Next: Building a project &rarr;](02-buildtime.html)</span>
